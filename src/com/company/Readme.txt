@@ -123,3 +123,6 @@ Wrapper Classes -> These are classes which are created to provide additional fea
 
 Integer.parseInt(<String>);
 
+Assignments
+------------
+1. Create a class to capture Customer information for a Bank. Allow customer to perform Withdraw and Deposit for the given account number
