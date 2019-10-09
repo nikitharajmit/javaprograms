@@ -87,9 +87,9 @@ System.out.println("Largest Number:"+large);*/
         cust1.showDetails();*/
 
 
-        DataInputStream in=new DataInputStream(System.in);
+/*        DataInputStream in=new DataInputStream(System.in);
 
-  /*      CustomerInBank cust[]=new CustomerInBank[10];
+        CustomerInBank cust[]=new CustomerInBank[10];
         for(int i=0;i<1;i++)
             cust[i]=new CustomerInBank();
 
@@ -137,7 +137,7 @@ System.out.println("Largest Number:"+large);*/
 
         for(int i=0;i<1;i++)
             cust[i].showDetails();
-*/
+
         int choice=0;
 
         do {
@@ -154,6 +154,7 @@ System.out.println("Largest Number:"+large);*/
                 {
                     case 1:
                             System.out.println("Withdraw option selected");
+
                             break;
                     case 2:
                             System.out.println("deposit option selected");
@@ -170,7 +171,34 @@ System.out.println("Largest Number:"+large);*/
             }
 
 
-        }while(choice!=4);
+        }while(choice!=4);*/
+
+//bank program using constructor, functions, polymorphism
+       /* BankCustomer customer1=new BankCustomer();
+        System.out.println("Without Explicit Initial Balance");
+        customer1.input(101,"Kiran");
+        customer1.output();
+
+
+        BankCustomer customer2=new BankCustomer(50000);
+        System.out.println("With Explicit Initial Balance");
+        customer2.input(101,"Ramesh");
+
+        String custDetails;
+        custDetails=customer2.getCustomerDetails();
+         System.out.println(custDetails);*/
+
+       //student details program
+
+        Student student1= new Student();
+        student1.registerStudent(101,"Nikitha","Kuvempunagar","o+","Electricals");
+        student1.showStudentdetails();
+
+        /*String studentDetails;
+        studentDetails= student1.getStudentdetails();
+        System.out.println(studentDetails);*/
+
+        System.out.println( student1.getStudentdetails());
 
     }
 }

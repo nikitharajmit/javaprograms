@@ -126,3 +126,106 @@ Integer.parseInt(<String>);
 Assignments
 ------------
 1. Create a class to capture Customer information for a Bank. Allow customer to perform Withdraw and Deposit for the given account number
+
+Constructors Function/Method
+----------------------------
+-> Method which executed as soon as the memory is allocated for the properties of the Class
+-> Constructor should have same name as Class Name
+
+Class BankCustomer
+{
+    private int accountNo;
+    private int initialBalance;
+    private String custName;
+
+    public void input(int acno, String cname)
+        {
+        //Code goes here
+
+        }
+
+    public void output()
+        {
+        //Code goes here
+
+        }
+
+//Constructor
+    public BankCustomer()
+    {
+    //Constructor code goes here
+    }
+}
+
+
+
+
+
+Main()
+{
+BankCustomer cust1=new BankCustomer();
+
+<Init>
+
+cust1.accountNo=NotInitialized
+cust1.initialBalance=NotInitialized
+cust1.custName=""
+
+}
+
+// Function Overloading / Polymorphism
+
+<Parameters of the function | No. of Paremeters and its Type> -> Function Signature
+Multiple function definitions having same name with different signature
+
+
+int a,b,c;
+void add(int x, int y)
+{
+    int c;
+    c=x+y;
+    System.out.println(c);
+}
+
+void add(int x, int y,int z)
+{
+    int c;
+    c=x+y+z;
+    System.out.println(c);
+}
+
+void add(int x, int y,int z,int p)
+{
+    int c;
+    c=x+y+z+p;
+    System.out.println(c);
+}
+
+
+add(2,3)
+
+add(4,2,3);
+
+add(56,56,43,23)
+
+Function
+--------
+1. Parameters / Arguments
+2. Return types
+
+<Access Specifier> <Return Type> <Function Name>(<Parameters>)
+{
+//Logic
+
+if <Return Type> != "void"
+    return <return Type Value>
+
+}
+
+Self referencing pointer in a Class - 'this'
+-------------------------------------------
+
+Assignments
+------------
+1. Create a class to capture Customer information for a Bank. Allow customer to perform Withdraw and Deposit for the given account number
+

@@ -18,22 +18,31 @@ public class Student
         preferredCourse=spc;
     }
 
-    public void viewStudentDetails()
+    public void registerStudent(int sid,String sname,String sadd, String sbg, String spc,String sac)
     {
-        System.out.println("Student Id:"+studentId);
-        System.out.println("Student Name:"+studentName);
-        System.out.println("Student Address:"+studentAddress);
-        System.out.println("Student Bloog Group:"+bloodGroup);
-        System.out.println("Student Preferred Course:"+preferredCourse);
-        System.out.println("Student Courses Allocated:"+courseAllotted);
+        studentId=sid;
+        studentName=sname;
+        studentAddress=sadd;
+        bloodGroup=sbg;
+        preferredCourse=spc;
+        courseAllotted=sac;
+    }
+    public void showStudentdetails()
+    {
+        //Code goes here
+        System.out.println("Student id:"+studentId+"\nStudent Name:"+studentName+"\nStudent Address:"+studentAddress+"\nBlood group:"+bloodGroup+"\nPreferred Course"+preferredCourse+"\nAllocated Course"+courseAllotted);
+    }
+    public String getStudentdetails(){
+
+        /*      String studentDetails;
+        studentDetails="Student id:"+studentId+"\nStudent Name:"+studentName+"\nStudent Address:"+studentAddress+"\nBlood group:"+bloodGroup+"\nPreferred Course"+preferredCourse+"\nAllocated Course"+courseAllotted;
+        return studentDetails;*/
+
+        return "Student id:"+studentId+"\nStudent Name:"+studentName+"\nStudent Address:"+studentAddress+"\nBlood group:"+bloodGroup+"\nPreferred Course"+preferredCourse+"\nAllocated Course"+courseAllotted;
 
     }
 
-    public void allocateCourse()
-    {
-        if (studentId%2==0)
-            courseAllotted="Computer Science";
-        else
-            courseAllotted="Electricals";
+    public Student(){
+        courseAllotted="computer science";
     }
 }
