@@ -229,3 +229,180 @@ Assignments
 ------------
 1. Create a class to capture Customer information for a Bank. Allow customer to perform Withdraw and Deposit for the given account number
 
+// Access control
+a. Static
+b. final
+
+
+Static
+1. Static Variable/properties
+2. Static Methods
+3. Static Code Blocks
+
+1. Static Variable
+
+e.g.
+
+class Employee
+{
+    private int id;
+    private String name;
+    private int sal;
+    public static int companyCode;
+
+    public void inputEmployeeDetails(int id, String name, int sal)
+    {
+        .
+        .
+        .
+    }
+
+    public void showEmployeeDetails()
+    {
+        print
+            id
+            name
+            sal
+            companyCode
+    }
+}
+
+Employee e1=new Employee();
+Employee e2=new Employee();
+
+e1.companyCode=1101;
+
+e2.inputEmployeeDetails(102,"Ramesh",34000);
+e2.showEmployeeDetails();
+
+Output:
+102
+Ramesh
+34000
+1101
+
+
+Static Method
+-------------
+class Employee
+{
+    private int id;
+    private String name;
+    private int sal;
+    public static int companyCode;
+
+
+    public static void showResponsibilities(String role)
+    {
+        .
+        .
+        .
+        .
+    }
+
+    public void inputEmployeeDetails(int id, String name, int sal)
+    {
+        .
+        .
+        .
+    }
+
+    public void showEmployeeDetails()
+    {
+        print
+            id
+            name
+            sal
+            companyCode
+    }
+}
+
+
+Employee.showResponsibility("PM");
+
+Static Block
+------------
+Static Method
+-------------
+class Employee
+{
+    private int id;
+    private String name;
+    private int sal;
+    public static int companyCode;
+
+    static
+    {
+        companyCode=1101;
+    }
+
+    public static void showResponsibilities(String role)
+    {
+        .
+        .
+        .
+        .
+    }
+
+    public void inputEmployeeDetails(int id, String name, int sal)
+    {
+        .
+        .
+        .
+    }
+
+    public void showEmployeeDetails()
+    {
+        print
+            id
+            name
+            sal
+            companyCode
+    }
+}
+
+
+
+Syntax
+
+Static Variable
+
+<Access modifier> static <data type> <variables>;
+
+Static method
+
+<Access modifier> static <return type> <function name>(<Argument list>)
+{
+.
+.
+.
+}
+
+Static block
+
+static
+{
+.
+.
+.
+}
+
+
+final
+-----
+define a constant
+
+syntax
+
+<access modifier> final <data type> <variable name>=<value>;
+
+// Design a class to manage the inventory of books in a Library. Use Static and Final where applicable
+
+
+Assignment
+-----------
+1. Create a Class to capture Book details with its purchased and available quantity for a Library.
+    a. Add 5 different books into Library
+    b. Accept the transaction type from the user
+        a. if Issue, accept Booktitle and issue qty from the user and perform issue operation and show the remaining qty of books
+        b. if Return, accept Booktitle and return qty from the user and perform issue operation and show the remaining qty of books

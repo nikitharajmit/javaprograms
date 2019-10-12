@@ -190,15 +190,69 @@ System.out.println("Largest Number:"+large);*/
 
        //student details program
 
-        Student student1= new Student();
+/*        Student student1= new Student();
         student1.registerStudent(101,"Nikitha","Kuvempunagar","o+","Electricals");
         student1.showStudentdetails();
 
-        /*String studentDetails;
+        *//*String studentDetails;
         studentDetails= student1.getStudentdetails();
-        System.out.println(studentDetails);*/
+        System.out.println(studentDetails);*//*
 
-        System.out.println( student1.getStudentdetails());
+        System.out.println( student1.getStudentdetails());*/
+/*
+        ITEmployee e1=new ITEmployee();
+        ITEmployee e2=new ITEmployee();
+        ITEmployee e3=new ITEmployee();
+
+        e1.inputEmployeeDetails(101,"Kiran",25000);
+        e2.inputEmployeeDetails(102,"Ramesh",35000);
+        e3.inputEmployeeDetails(103,"Suresh",45000);
+
+        e1.showEmployeeDetails();
+
+        ITEmployee.companyCode=2202;
+
+        ITEmployee.showResponsibilities("PM");
+
+        e1.showEmployeeDetails();
+        e2.showEmployeeDetails();
+        e3.showEmployeeDetails();
+
+
+        System.out.println(e1.COMPANY_NAME);*/
+
+     /*   Book b1[]=new Book[10];
+
+        for (int i=0;i<=1;i++){
+            b1[i]=new Book();
+        }*/
+
+    /* Book b1=new Book();
+     Book b2=new Book();
+
+     b1.BookDetails("JAVA Complete Referrence","Herbert Schildt",700,"Seventh Edition");
+     b2.BookDetails("JAVA Referrence","Herbert",800,"Eleventh Edition");
+
+     String book1,book2;
+   book1= b1.showBookDetails();
+    book2=b2.showBookDetails();
+
+    System.out.println(book1+ "\n "+ book2);*/
+
+BookInventory b=new BookInventory();
+
+b.inputBookDetails(100,"C-Programming","YK","2019",10);
+System.out.println(b.getBookDetails());
+
+b.issueBook(10);
+System.out.println(b.getBookDetails());
+
+b.issueBook(5);
+System.out.println(b.getBookDetails());
+
+b.returnBook(3);
+System.out.println(b.getBookDetails());
+
 
     }
 }
