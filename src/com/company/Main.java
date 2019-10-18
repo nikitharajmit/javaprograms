@@ -239,6 +239,7 @@ System.out.println("Largest Number:"+large);*/
 
     System.out.println(book1+ "\n "+ book2);*/
 
+/*
 BookInventory b=new BookInventory();
 
 b.inputBookDetails(100,"C-Programming","YK","2019",10);
@@ -252,7 +253,11 @@ System.out.println(b.getBookDetails());
 
 b.returnBook(3);
 System.out.println(b.getBookDetails());
+*/
 
+    Sedan verna=new Sedan();
+    verna.inputCarProperties(4,true,"CRDI");
+    verna.showCarProperties();
 
     }
 }

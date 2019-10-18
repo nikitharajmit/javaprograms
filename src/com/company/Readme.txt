@@ -406,3 +406,107 @@ Assignment
     b. Accept the transaction type from the user
         a. if Issue, accept Booktitle and issue qty from the user and perform issue operation and show the remaining qty of books
         b. if Return, accept Booktitle and return qty from the user and perform issue operation and show the remaining qty of books
+
+Inheritance
+-----------
+Base class - Super Class
+Derived class
+
+
+Syntax
+
+<access modifier> class <class name> extends <super class name>
+
+super -> keyword. this will always refer to immediate base class/ super class
+
+// e.g. Create classes to capture CAR variants and its properties
+
+Car variants
+------------
+Sedan
+Hatchback
+
+Sedan
+-----
+properties
+
+1. wheels *
+2. engine *
+3. steering *
+4. length
+
+behavior
+1. Speed
+2. Boot space management
+
+
+Hatchback
+---------
+properties
+
+1. wheels *
+2. engine *
+3. steering *
+4. length
+
+behavior
+
+1. Speed
+2. Boot space management
+
+
+with Inheritance
+
+CAR
+---
+properties
+1. wheels
+2. engine
+3. steering
+
+behavior
+--------
+1. Speed
+
+
+
+Sedan derives from CAR
+----------------------
+properties
+1. length
+
+behavior
+
+1. Speed
+2. Boot space management
+
+
+Hatchback derives from CAR
+--------------------------
+properties
+1. length
+
+behavior
+1. Speed
+2. Boot space management
+
+Inheritance
+------------
+1. Single Inheritance - Supported in JAVA
+2. Multi-level Inheritance - Supported in JAVA
+3. Multiple Inheritance - Not Supported in JAVA
+
+
+Function Overloading/Polymorphism -> Having same function name with different signatures (argument types and no. of arguments)
+
+Function Overriding -> Having same function name with same signatures in Super and Derived Class (argument types and no. of arguments)
+
+
+Access modifier
+---------------
+Private
+Public
+Protected -> This is applicable only for Super and Derived Class
+
+
+
