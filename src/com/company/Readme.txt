@@ -508,5 +508,21 @@ Private
 Public
 Protected -> This is applicable only for Super and Derived Class
 
+Problem Statement
+-----------------
+1. Capture voter details for a general election which is scheduled to be conducted in Mysore.
+Provide the below features in the design
+    a. Add Voter
+    b. Modify Voter details based on VoterID
+    c. List all Voters
+
+
+Approach
+1. List down all the data that needs to be captured
+2. Group the related data - as much as possible
+3. Identify the relation between the data listed
+4. Identify repeated data and operations in Groups/By feature
+
+
 
 

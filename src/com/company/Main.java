@@ -255,9 +255,26 @@ b.returnBook(3);
 System.out.println(b.getBookDetails());
 */
 
-    Sedan verna=new Sedan();
+/*    Sedan verna=new Sedan();
     verna.inputCarProperties(4,true,"CRDI");
-    verna.showCarProperties();
+    verna.showCarProperties();*/
+
+Voter v1=new Voter();
+Voter v2=new Voter();
+
+v1.registerVoterDetails(101,"3rd Cross","Kuvempunagar","570023",26,5555);
+v2.registerVoterDetails(457,"11th Cross","K R Mohalla","570004",19,8799);
+
+if (v1.isEligible())
+    v1.displayVoterDetails();
+else
+    System.out.println("Voter is not Eligible");
+
+
+if (v2.isEligible())
+    v2.displayVoterDetails();
+else
+    System.out.println("Voter is not Eligible");
 
     }
 }
