@@ -523,6 +523,63 @@ Approach
 3. Identify the relation between the data listed
 4. Identify repeated data and operations in Groups/By feature
 
+Objects as Properties of a Class with Arrays
+
+Problem Statement
+-----------------
+1. Capture Product details of the supplier and allow purchasers to choose the product and purchase
+-> Capture Product details
+-> Show Product to purchasers
+-> Allow Purchase operation
+
+1. Product Code
+2. Product Title
+3. Product Desc
+4. Product Price
+5. Product Seller name
+6. Customer name
+7. Customer Address
+8. Customer Payment Details
+
+
+Product
+- Code
+- Title
+- Desc
+- Price
+- Supplier Name
+- TurnAroundTimeInDays
+
+Customer
+- Name
+- Address
+
+
+Customer_Payment
+- Product
+- Customer
+- Purchase date
+- Purchase Qty
+- Purchase Price
+- Estimated Delivery in days
+
+Implementation - Main Function
+Customer_Payment[10]
+
+
+Assignment
+----------
+Extend the Product purchase program defined already to provide below options to user
+1. Create Product
+2. Create Customer
+3. Show Product to purchase
+    -> Accept Product Id for purchase transaction
+    -> Accept Customer Name
+    -> Accept Qty to be purchased
+    -> Accept the Purchase Date
+    -> Show Purchase Transaction details with Total Amount to be Paid and also the TAT
+
+
 
 
 

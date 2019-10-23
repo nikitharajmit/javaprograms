@@ -259,7 +259,7 @@ System.out.println(b.getBookDetails());
     verna.inputCarProperties(4,true,"CRDI");
     verna.showCarProperties();*/
 
-Voter v1=new Voter();
+/*Voter v1=new Voter();
 Voter v2=new Voter();
 
 v1.registerVoterDetails(101,"3rd Cross","Kuvempunagar","570023",26,5555);
@@ -274,7 +274,31 @@ else
 if (v2.isEligible())
     v2.displayVoterDetails();
 else
-    System.out.println("Voter is not Eligible");
+    System.out.println("Voter is not Eligible");*/
+
+    CustomerTranscation customerTranscation[]=new CustomerTranscation[10];
+    Product product[]=new Product[5];
+    Customer customer[]=new Customer[5];
+
+    product[0]=new Product();
+    product[0].createProduct(1,"Mobile","One Plus Mobile with 6 inch display",20000,"Sangeetha Mobiles",10);
+
+    product[1]=new Product();
+    product[1].createProduct(2,"Smart Band","Honor 5 with Blood Oxygen display",5000,"Universal",4);
+
+    customer[0]=new Customer();
+    customer[0].createCustomer("Nikitha","Mysore");
+
+    customerTranscation[0]=new CustomerTranscation();
+    customerTranscation[0].purchase(product[0],customer[0],"Oct-2019",2);
+
+    customerTranscation[1]=new CustomerTranscation();
+    customerTranscation[1].purchase(product[1],customer[0],"Oct-2019",1);
+
+    customerTranscation[0].showPurchaseDetails();
+    customerTranscation[1].showPurchaseDetails();
+
+
 
     }
 }
