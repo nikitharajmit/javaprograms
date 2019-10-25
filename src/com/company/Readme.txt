@@ -581,5 +581,11 @@ Extend the Product purchase program defined already to provide below options to 
 
 
 
+Assignment
+----------
+Create a Class for capturing Student information in a college and display the same.
+Assume an University having 5 colleges and each college with Max of 15 students registrations
+
+
 
 

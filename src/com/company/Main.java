@@ -276,7 +276,7 @@ if (v2.isEligible())
 else
     System.out.println("Voter is not Eligible");*/
 
-    CustomerTranscation customerTranscation[]=new CustomerTranscation[10];
+  /*  CustomerTranscation customerTranscation[]=new CustomerTranscation[10];
     Product product[]=new Product[5];
     Customer customer[]=new Customer[5];
 
@@ -296,9 +296,33 @@ else
     customerTranscation[1].purchase(product[1],customer[0],"Oct-2019",1);
 
     customerTranscation[0].showPurchaseDetails();
-    customerTranscation[1].showPurchaseDetails();
+    customerTranscation[1].showPurchaseDetails();*/
 
+    University university=new University();
+    College college[]=new College[5];
+    CollegeStudent student[]=new CollegeStudent[5];
 
+    for (int i=0;i<=3;i++){
+        college[i]=new College();
+    }
+        for (int i=0;i<=3;i++){
+            student[i]=new CollegeStudent();
+        }
+        student[0].registerStudentDetails(101,"Nikitha","Mysore");
+        student[1].registerStudentDetails(102,"Anusha","Mandya");
+        student[2].registerStudentDetails(103,"Anitha","Mysore");
+        student[3].registerStudentDetails(104,"Bindu","Mandya");
+
+        college[0].inputCollegeDetials(student[0],"MH0006","MIT","Mysore");
+        college[1].inputCollegeDetials(student[1],"MH0006","MIT","Mysore");
+
+        college[2].inputCollegeDetials(student[2],"PE0008","PES","Mandya");
+        college[3].inputCollegeDetials(student[3],"PE0008","PES","Mandya");
+
+       college[0].displayCollegeDetails();
+       college[1].displayCollegeDetails();
+       college[2].displayCollegeDetails();
+       college[3].displayCollegeDetails();
 
     }
 }
