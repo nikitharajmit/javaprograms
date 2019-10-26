@@ -1,21 +1,40 @@
 package com.company;
 
 public class College {
-    private CollegeStudent studentinfo[15];
+    private CollegeStudent studentinfo[]=new CollegeStudent[5];
     private String cCode;
     private String cName;
     private String cAddress;
+    private int studnetCounter=0;
 
-    public void inputCollegeDetials(CollegeStudent studentinfo,String cCode,String cName,String cAddress){
-        this.studentinfo=studentinfo;
+    public College(){
+        for (int i=0;i<5;i++){
+            studentinfo[i]=new CollegeStudent();
+        }
+    }
+    public void collegeDetails(String cCode,String cName,String cAddress){
         this.cCode=cCode;
         this.cName=cName;
         this.cAddress=cAddress;
     }
-    public void displayCollegeDetails(){
-        studentinfo.displayStudentDetials();
-        System.out.println("College ID:"+cCode);
+    public void showCollegeDetails(){
+        System.out.println("College Code:"+cCode);
         System.out.println("College Name:"+cName);
         System.out.println("College Address:"+cAddress);
     }
+    public String getcName(){
+        return cName;
+    }
+    public void createStudentDetails(int sid,String sName,String sAddress){
+        studentinfo[studnetCounter].registerStudentDetails(sid,sName,sAddress);
+        studnetCounter++;
+    }
+    public void showStudentDetails(){
+        for(int i=0;i<5;i++){
+            studentinfo[i].displayStudentDetials();
+        }
+
+    }
+
+
 }

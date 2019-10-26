@@ -1,26 +1,33 @@
 package com.company;
 
 public class University {
-    private College collegeinfo[5];
-    private String titlename;
-    private String address;
-    private String uCode;
-    private int contact;
+    private College collegeinfo[]=new College[5];
+    private int collegeCounter=0;
 
-    public void inputUniversityDetails(College collegeinfo,String titlename,String address,String uCode,int contact){
-        this.collegeinfo=collegeinfo;
-        this.titlename=titlename;
-        this.address=address;
-        this.uCode=uCode;
-        this.contact=contact;
+
+    public University(){
+        for (int i=0;i<5;i++){
+            collegeinfo[i]=new College();
+        }
+    }
+    public void createCollegeDetails(String cCode,String cName,String cAddress){
+       collegeinfo[collegeCounter].collegeDetails(cCode,cName,cAddress);
+       collegeCounter++;
+
     }
 
-    public void displayUniversityDetails(){
-        collegeinfo.displayCollegeDetails();
-        System.out.println("Title Name:"+titlename);
-        System.out.println("Address:"+address);
-        System.out.println("University Code:"+uCode);
-        System.out.println("Contact:"+contact);
-    }
+   public College getCollegeName(String collegeName)
+   {
+        for (int i=0;i<5;i++)
+        {
+            if(collegeName.equals(collegeinfo[i].getcName()))
+            {
+               return collegeinfo[i];
+            }
+
+        }
+        return null;
+
+   }
     }
 

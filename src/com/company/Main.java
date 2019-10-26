@@ -299,30 +299,33 @@ else
     customerTranscation[1].showPurchaseDetails();*/
 
     University university=new University();
-    College college[]=new College[5];
-    CollegeStudent student[]=new CollegeStudent[5];
+    university.createCollegeDetails("MH0006","MIT","Mandya");
+    university.createCollegeDetails("JC0001","JCE","Mysore");
+    university.createCollegeDetails("PES008","PES","Mandya");
+    university.createCollegeDetails("ATME02","ATME","Mysore");
+    university.createCollegeDetails("MR0009","MRIT","Mandya");
 
-    for (int i=0;i<=3;i++){
-        college[i]=new College();
+
+  College c1,c2;
+  c1=university.getCollegeName("MIT");
+  c2=university.getCollegeName("JCE");
+
+        c1.createStudentDetails(101,"Nikitha","Mysore");
+        c1.createStudentDetails(102,"Anusha","Mandya");
+        c1.createStudentDetails(103,"Anitha","Maddur");
+        c1.createStudentDetails(104,"Sahana","Mysore");
+        c1.createStudentDetails(105,"Amulya","Mysore");
+
+        c2.createStudentDetails(201,"Bindu","Mangalore");
+        c2.createStudentDetails(202,"Anand","Mangalore");
+        c2.createStudentDetails(203,"Vinuth","Mangalore");
+        c2.createStudentDetails(204,"Lakshmi","Mangalore");
+        c2.createStudentDetails(205,"Raju","Mangalore");
+
+        System.out.println("MIT Students");
+        c1.showStudentDetails();
+        System.out.println("JC Students");
+        c2.showStudentDetails();
     }
-        for (int i=0;i<=3;i++){
-            student[i]=new CollegeStudent();
-        }
-        student[0].registerStudentDetails(101,"Nikitha","Mysore");
-        student[1].registerStudentDetails(102,"Anusha","Mandya");
-        student[2].registerStudentDetails(103,"Anitha","Mysore");
-        student[3].registerStudentDetails(104,"Bindu","Mandya");
 
-        college[0].inputCollegeDetials(student[0],"MH0006","MIT","Mysore");
-        college[1].inputCollegeDetials(student[1],"MH0006","MIT","Mysore");
-
-        college[2].inputCollegeDetials(student[2],"PE0008","PES","Mandya");
-        college[3].inputCollegeDetials(student[3],"PE0008","PES","Mandya");
-
-       college[0].displayCollegeDetails();
-       college[1].displayCollegeDetails();
-       college[2].displayCollegeDetails();
-       college[3].displayCollegeDetails();
-
-    }
 }
