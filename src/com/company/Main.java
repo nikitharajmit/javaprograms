@@ -1,6 +1,8 @@
 package com.company;
 
+import javax.naming.directory.SearchResult;
 import java.io.DataInputStream;
+import java.util.Scanner;
 
 public class Main {
 
@@ -298,7 +300,7 @@ else
     customerTranscation[0].showPurchaseDetails();
     customerTranscation[1].showPurchaseDetails();*/
 
-    University university=new University();
+/*    University university=new University();
     university.createCollegeDetails("MH0006","MIT","Mandya");
     university.createCollegeDetails("JC0001","JCE","Mysore");
     university.createCollegeDetails("PES008","PES","Mandya");
@@ -325,7 +327,65 @@ else
         System.out.println("MIT Students");
         c1.showStudentDetails();
         System.out.println("JC Students");
-        c2.showStudentDetails();
+        c2.showStudentDetails();*/
+
+/*    Bank bank=new Bank("HDFC",65);
+    bank.showAccountBalance();
+    bank.bankTransaction.deposit(3000);
+    bank.showAccountBalance();
+    if(!bank.bankTransaction.withdraw(3000))
+        System.out.println("Your account balance will be less than Minimum with this transaction. Hence not permitted!");
+    else
+        bank.showAccountBalance();
+        */
+
+    String names[]=new String[10];
+
+
+    // Initialization
+    names[0]="Mysore";
+    names[1]="Bangalore";
+    names[2]="Mangalore";
+    names[3]="Bidar";
+    names[4]="Hassan";
+    names[5]="Shimogga";
+    names[6]="Davangere";
+    names[7]="Chamarajanagar";
+    names[8]="Raichur";
+    names[9]="Chikkamagalur";
+
+    //or this can be accepted by users also
+    /*    for(int i=0;i<10;i++)
+            names[i]=Integer.parseInt(in.readLine());*/
+
+    String searchKey;
+    Scanner scanner=new Scanner(System.in);
+    searchKey=scanner.next();
+
+    boolean searchResult;
+
+    searchResult=false;
+    String searchStringResult="";
+    for(int i=0;i<10;i++)
+        if(searchKey.equals(names[i])) {
+            searchResult = true;
+            searchStringResult=names[i];
+        }
+
+        if(searchResult)
+            System.out.println("Search Success!" + searchStringResult);
+        else
+            System.out.println("Search Failure!");
+
+
+
+
+
+
+
+
+
+
     }
 
 }

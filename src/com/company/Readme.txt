@@ -586,6 +586,52 @@ Assignment
 Create a Class for capturing Student information in a college and display the same.
 Assume an University having 5 colleges and each college with Max of 15 students registrations
 
+//Inner and Nested Classes
+
+similar to concept of nested loop
+
+class university
+{
+college[]
+}
+
+class college
+{
+student[]
+}
+
+class student
+{
+}
+
+
+as inner class
+
+class university
+{
+    class college
+    {
+        class student
+        {
+        }
+        student[] - Correct
+    }
+    student[] - Wrong
+}
+
+main()
+{
+university[] -correct
+college[] - wrong
+student[] - wrong
+}
+
+// INNER CLASS / NESTED CLASS
+// Create a class for handling bank transaction such as Withdraw and Deposit
+- assume a bank account with minimum balance of 25000
+
+
+
 
 
 
