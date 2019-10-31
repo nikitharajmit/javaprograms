@@ -630,6 +630,40 @@ student[] - wrong
 // Create a class for handling bank transaction such as Withdraw and Deposit
 - assume a bank account with minimum balance of 25000
 
+// Abstract Class
+
+OOPS
+1. Data Abstraction
+2. Data Encapsulation
+3. Inheritance
+4. Polymorphism
+
+
+Class Animal
+{
+    makeASound()
+    {
+        "Dont know"
+    }
+}
+
+class Dog extends Animal
+{
+    makeASound()
+    {
+        "Bow Bow"
+    }
+}
+
+class Cat extends Animal
+{
+    makeASound()
+    {
+        "Meo Meo"
+    }
+}
+
+
 
 
 

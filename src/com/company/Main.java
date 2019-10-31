@@ -339,7 +339,7 @@ else
         bank.showAccountBalance();
         */
 
-    String names[]=new String[10];
+       /*String names[]=new String[10];
 
 
     // Initialization
@@ -355,8 +355,8 @@ else
     names[9]="Chikkamagalur";
 
     //or this can be accepted by users also
-    /*    for(int i=0;i<10;i++)
-            names[i]=Integer.parseInt(in.readLine());*/
+    *//*    for(int i=0;i<10;i++)
+            names[i]=Integer.parseInt(in.readLine());*//*
 
     String searchKey;
     Scanner scanner=new Scanner(System.in);
@@ -375,9 +375,30 @@ else
         if(searchResult)
             System.out.println("Search Success!" + searchStringResult);
         else
-            System.out.println("Search Failure!");
+            System.out.println("Search Failure!");*/
+
+/*VoterInformation voter=new VoterInformation();
+voter.setVoterinfo(2020,1020,"3rd cross","JP Nagar");
+voter.showVoterinfo();
+voter.e.setAge(20);
+if(voter.e.iseligible())
+    System.out.println("Eligible");
+else
+    System.out.println("Not Eligible");*/
 
 
+Animal animal;
+
+Dog dog=new Dog();
+Cat cat=new Cat();
+
+
+animal=dog;
+animal.makeASound();
+
+
+animal=cat;
+animal.makeASound();
 
 
 
