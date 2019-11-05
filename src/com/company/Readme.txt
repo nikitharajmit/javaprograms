@@ -663,9 +663,63 @@ class Cat extends Animal
     }
 }
 
+//program to perform all arthematic operation by using  scanner
+// program to implement all conditional control statement
+// program to implement all looping statement
+//prograam to implement array  and to search the  element in an array
+//program to implement matrix
+//program to implement string
+
+Interfaces
+----------
+
+<access modifier> interface <interface name>
+{
+Function declarations;
+<return type> <function name>(<argument list>);
+}
+
+Interfaces are implemented through classes.
+Interfaces are defined to insist the classes to define the definition of the methods declared in it.
+
+Implementation
+--------------
+<access modifier> class <class name> implements <interface names...>(more than 1 interfacses can be implemented)
 
 
+interface KEBRules
+{
+void installEnergyMeter();
+}
 
+interface MUDARules
+{
+void leaveSetBacks(int distanceInFeetEW,int distanceInFeetNS);
+}
 
+class HouseConstruction implements KEBRules, MUDARules
+{
+    public void installEnergyMeter()
+    {
+        System.out.println("Energy meter is installed");
+    }
 
+    public void leaveSetBacks(int distanceInFeetEW,int distanceInFeetNS)
+    {
+        System.out.println("Set backs are taken care");
+    }
+}
 
+Interfaces can be instantiated as reference objects
+---------------------------------------------------
+
+<interface name> <interface ref/obj name>;
+
+// Assume a transcation in a library where the issue and return are the key process. Each process has its own existance and also available for Librarian and Student
+
+Class
+- LIBLibrarian
+- LIBStudent
+
+Interface
+- LIBTransaction

@@ -1,19 +1,24 @@
 package com.company;
 
+interface AnimalSound
+{
+    void makeASound();
+}
+
 public abstract class Animal
 {
     protected int noOfLegs;
-    protected boolean hasTail;
+    protected boolean _hasTail;
 
     public Animal()
     {
         noOfLegs=4;
-        hasTail=true;
+        _hasTail=true;
     }
 
-    public void makeASound()
+    public boolean hasTail()
     {
-        System.out.println("Dont know!");
+        return this._hasTail;
     }
 
 }

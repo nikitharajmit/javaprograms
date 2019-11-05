@@ -387,26 +387,42 @@ else
     System.out.println("Not Eligible");*/
 
 
-Animal animal;
+/*AnimalSound animalSound;
 
 Dog dog=new Dog();
 Cat cat=new Cat();
 
 
-animal=dog;
-animal.makeASound();
+        animalSound=dog;
+        animalSound.makeASound();
+if(dog.hasTail())
+    System.out.println("Dog has a tail");
 
 
-animal=cat;
-animal.makeASound();
+        animalSound=cat;
+        animalSound.makeASound();*/
 
+/*
+HouseConstruction home=new HouseConstruction();
 
+home.installEnergyMeter();
+home.leaveSetBacks(30,40);
+*/
 
+LIBLibrarian libLibrarian=new LIBLibrarian();
+LIBStudent libStudent=new LIBStudent();
 
+LIBTransaction libTransaction;
 
+showTransactionOfALibrary(libLibrarian);
+showTransactionOfALibrary(libStudent);
 
+    }
 
-
+    public static void showTransactionOfALibrary(LIBTransaction libTransaction)
+    {
+        libTransaction.bookIssue();
+        libTransaction.bookReturn();
     }
 
 }
