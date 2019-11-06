@@ -409,20 +409,40 @@ home.installEnergyMeter();
 home.leaveSetBacks(30,40);
 */
 
-LIBLibrarian libLibrarian=new LIBLibrarian();
+/*LIBLibrarian libLibrarian=new LIBLibrarian();
 LIBStudent libStudent=new LIBStudent();
 
 LIBTransaction libTransaction;
 
 showTransactionOfALibrary(libLibrarian);
-showTransactionOfALibrary(libStudent);
+showTransactionOfALibrary(libStudent);*/
+
+/*InterfaceDemo interfaceDemo=new InterfaceDemo();
+interfaceDemo.followSignals();*/
+
+/*DrivingRules.showFineFor(DrivingRules.VIOLATIONSG);*/
+
+/*System.out.println(interfaceDemo.getNoOfConstants());*/
+/*System.out.println("Fine for Overspeeding:"+interfaceDemo.calculateFine(DrivingRules.VIOLATIONOS));
+System.out.println("Fine for Signal Jump:"+interfaceDemo.calculateFine(DrivingRules.VIOLATIONSG));*/
+
+ECProduct p1=new ECProduct("Mobile - iPHONE",50000);
+ECProduct p2=new ECProduct("Mobile - VIVO",500);
+
+p1.applyDiscount(Discount.JAN);
+p1.showProductDetails();
+
+p2.applyDiscount(Discount.FEB);
+p2.showProductDetails();
+
+
 
     }
 
-    public static void showTransactionOfALibrary(LIBTransaction libTransaction)
+    /*public static void showTransactionOfALibrary(LIBTransaction libTransaction)
     {
         libTransaction.bookIssue();
         libTransaction.bookReturn();
     }
-
+*/
 }

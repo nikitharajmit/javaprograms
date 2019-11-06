@@ -723,3 +723,33 @@ Class
 
 Interface
 - LIBTransaction
+
+Interface
+----------
+1. Collection of Abstract Methods
+2. Collection of Final Variables - Constant values
+3. Default methods - Method defined in Interface with default keyword
+4. Static methods
+
+
+interface DrivingRules
+{
+void followSignals();
+int FINEFORSIGNALJUMP=100;
+int FINEFOROVERSPEEDING=400;
+}
+
+class DrivingMotorVehicle implements DrivingRules
+{
+void followSignals()
+{
+Statement goes here...
+}
+
+int calculateFine(String violationDesc)
+{
+if(violationDesc.equals("Signal Jump")
+   return FINEFORSIGNALJUMP;
+}
+
+// e-commerce: Assume a scenario where the product details are stored and depending upon the month, show relevant discounts
