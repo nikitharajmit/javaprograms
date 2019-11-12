@@ -753,3 +753,62 @@ if(violationDesc.equals("Signal Jump")
 }
 
 // e-commerce: Assume a scenario where the product details are stored and depending upon the month, show relevant discounts
+
+// Exceptions
+Throwable
+    - Exception - Can be handled through code blocks
+    - Error - Cannot be handled through code blocks
+
+Exception
+- User defined exceptions
+- Pre-defined exceptions
+
+
+Exception Blocks - Exception handlers
+
+try
+    {
+    ---
+    ---
+    ---
+    ---
+    ---
+    Code which might through Exceptions
+    }
+catch(<Exception Class> <Exception Object>)
+    {
+    ---
+    ---
+    ---
+    code to handle Exception object received
+    }
+catch(<Exception Class> <Exception Object>)
+    {
+    ---
+    ---
+    ---
+    code to handle Exception object received
+    }
+catch(<Exception Class> <Exception Object>)
+    {
+    ---
+    ---
+    ---
+    code to handle Exception object received
+    }
+.
+.
+.
+.
+.
+.
+finally()
+{
+-
+-
+-
+Code gets executed for each exception handling
+}
+
+
+

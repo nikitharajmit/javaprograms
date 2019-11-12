@@ -426,6 +426,7 @@ interfaceDemo.followSignals();*/
 /*System.out.println("Fine for Overspeeding:"+interfaceDemo.calculateFine(DrivingRules.VIOLATIONOS));
 System.out.println("Fine for Signal Jump:"+interfaceDemo.calculateFine(DrivingRules.VIOLATIONSG));*/
 
+/*
 ECProduct p1=new ECProduct("Mobile - iPHONE",50000);
 ECProduct p2=new ECProduct("Mobile - VIVO",500);
 
@@ -435,8 +436,55 @@ p1.showProductDetails();
 p2.applyDiscount(Discount.FEB);
 p2.showProductDetails();
 
+*/
 
+// Assume a scenario where %result to be calculated for the given student with Total marks and obtained marks
+// Total marks=600
+// Student 1: 560
+// Student 2: 300
+// Student 3: 0
 
+/*float total_marks, obtained_marks,percentage;
+
+total_marks=600;
+obtained_marks=560;
+percentage=0;
+
+try
+{
+    percentage = obtained_marks / total_marks * 100;
+}
+catch(ArithmeticException ex)
+{
+    System.out.println("Please check if your Total Marks is 0");
+}
+
+System.out.println("Percentage="+percentage+"%");*/
+
+/*int a[]=new int[5];
+int max;
+
+for(int i=0;i<5;i++)
+    a[i]=i*10;
+
+max=6;
+
+//try {
+    for (int i = 0; i < max; i++)
+        System.out.println(a[i]);*/
+//}
+/*catch(ArrayIndexOutOfBoundsException ex)
+{
+    System.out.println(ex);
+}*/
+
+/*System.out.println("This is after Exception handled");*/
+
+        for(int i=0;i<5;i++) {
+            for (int j = 0; j <= i; j++)
+                System.out.print("* ");
+            System.out.println("");
+        }
     }
 
     /*public static void showTransactionOfALibrary(LIBTransaction libTransaction)
