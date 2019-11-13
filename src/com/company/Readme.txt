@@ -810,5 +810,44 @@ finally()
 Code gets executed for each exception handling
 }
 
+Inheritance of Exception
+------------------------
+
+Exception - Base class for all Exceptions in JAVA
+
+User defined Exception
+----------------------
+<access modifier> class <class name> extends Exception
+{
+
+// Constructor
+<access modifier> <class name>(String str)
+{
+super(str);
+-
+-
+-
+-
+}
 
 
+}
+
+throw -  this is a keyword which is used to alert an Exception object to the calling function/class
+
+throw <Exception class object>;
+
+Exception will be thrown in a statement which is defined in a function
+
+Function should be explicitly indicated that it is throwing an Exception
+
+<access modifier> <return type> <function name>(<argument list>) throws <ExceptionClassName which will be thrown from this function>
+{
+-
+-
+-
+-
+throw <ExceptionClassObject>
+}
+
+toString() is a method which is used to show

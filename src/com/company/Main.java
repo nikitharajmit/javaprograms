@@ -480,11 +480,36 @@ max=6;
 
 /*System.out.println("This is after Exception handled");*/
 
-        for(int i=0;i<5;i++) {
+/*        for(int i=0;i<5;i++) {
             for (int j = 0; j <= i; j++)
                 System.out.print("* ");
             System.out.println("");
+        }*/
+
+    try {
+        EmployeeExceptionDemo();
+    }
+    catch(Exception ex)
+    {
+        System.out.println(ex);
+    }
+
+
+    }
+
+    public static void EmployeeExceptionDemo() throws SalaryIncrementExceededException
+    {
+        Employee employee=new Employee();
+        employee.captureEmployeeInformation(101,"Kiran",25000);
+        employee.showEmployeeInformation();
+        try {
+            employee.increaseSalary(6000);
         }
+        catch(SalaryIncrementExceededException ex)
+        {
+            throw ex;
+        }
+        employee.showEmployeeInformation();
     }
 
     /*public static void showTransactionOfALibrary(LIBTransaction libTransaction)
