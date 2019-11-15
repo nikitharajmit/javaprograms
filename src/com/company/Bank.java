@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Bank
 {
     public class BankTransaction
@@ -8,22 +9,38 @@ public class Bank
 
         public BankTransaction()
         {
-            accountBalance=25000;
+            accountBalance=5100;
         }
 
-        public boolean withdraw(int withdrawAmount)
+        public void withdraw(int withdrawAmount) throws InsufficientBalanceException
         {
-            if(accountBalance-withdrawAmount>=25000)
+            if(accountBalance-withdrawAmount>=0)
             {
                 accountBalance-=withdrawAmount;
-                return true;
             }
-             return false;
+            else
+            {
+                InsufficientBalanceException insufficientBalanceException=new InsufficientBalanceException("Balance is Zero");
+                if(violationOfMonthlyAvgBalance())
+                {
+                    AvgBalanceException avgBalanceException=new AvgBalanceException("Monthly AVG Balance Not maintained. Hence fine applied");
+                    insufficientBalanceException.initCause(avgBalanceException);
+                }
+
+                throw  insufficientBalanceException;
+
+
+            }
         }
 
         public void deposit(int depositAmount)
         {
             accountBalance+=depositAmount;
+        }
+
+        public boolean violationOfMonthlyAvgBalance()
+        {
+            return true;
         }
 
         public int getAccountBalance()

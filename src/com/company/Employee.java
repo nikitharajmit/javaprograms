@@ -23,8 +23,9 @@ public class Employee
     public void increaseSalary(int salIncrease) throws SalaryIncrementExceededException {
         if(salIncrease<=5000)
             empSalary+=salIncrease;
-        else
+        else {
             throw new SalaryIncrementExceededException();
+        }
     }
 
 }

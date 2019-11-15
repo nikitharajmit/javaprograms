@@ -851,3 +851,82 @@ throw <ExceptionClassObject>
 }
 
 toString() is a method which is used to show
+
+// Exception Chaining and Multiple Exception catch block
+
+Bank
+- Avg Monthly min Bal = 5000
+- Fine for not maintaining AVG Balance=200
+
+Current Balance = 5100
+    Withdraw=2000
+    Withdraw=3000
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    1 month over
+    Withdraw=100;
+        - AVGMonthlyBalanceNotMaintainedError
+        - InsufficientBalance
+
+        due to non avg balance balance will be -100 after fine
+            Throw InsufficientBalanceError
+
+1 functions used for Exception Chaining
+
+1. initCause(<Exception Object>)
+2. getCause();
+
+
+Multiple Exception Catch Block
+
+try
+{
+.
+.
+.
+.
+}
+catch(<Exception1> | <Exception2> | <Exception3>)
+{
+.
+.
+.
+}
+
+e.g.
+
+Login
+-----
+    Username
+    Password
+        validate Username and Password
+            if Invalid
+                   Username?? -> Username is invalid - InvalidUserNameException
+                   Password?? -> Password is invalid - InvalidPasswordException
+                   Both?? -> Username and Password is invalid
+
+
+try
+{
+    //username validation??
+}
+catch(InvalidUserNameException | InvalidPasswordException ex)
+{
+    // Invalid Username/Password
+}
+
+
+
+
+
+
+
+
+
+
+

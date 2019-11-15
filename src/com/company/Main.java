@@ -486,18 +486,37 @@ max=6;
             System.out.println("");
         }*/
 
-    try {
+   /* try
+    {
         EmployeeExceptionDemo();
     }
     catch(Exception ex)
     {
         System.out.println(ex);
+
+    }*/
+
+    Bank bank=new Bank("HDFC",65);
+    try {
+        bank.bankTransaction.withdraw(2000);
+        bank.showAccountBalance();
+        bank.bankTransaction.withdraw(3000);
+        bank.showAccountBalance();
+        bank.bankTransaction.withdraw(300);
+    }
+    catch(InsufficientBalanceException ex)
+    {
+        ex.printStackTrace();
     }
 
 
+
+
+
+
     }
 
-    public static void EmployeeExceptionDemo() throws SalaryIncrementExceededException
+    /*public static void EmployeeExceptionDemo() throws SalaryIncrementExceededException
     {
         Employee employee=new Employee();
         employee.captureEmployeeInformation(101,"Kiran",25000);
@@ -508,9 +527,10 @@ max=6;
         catch(SalaryIncrementExceededException ex)
         {
             throw ex;
+
         }
         employee.showEmployeeInformation();
-    }
+    }*/
 
     /*public static void showTransactionOfALibrary(LIBTransaction libTransaction)
     {
