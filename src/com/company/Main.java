@@ -496,7 +496,7 @@ max=6;
 
     }*/
 
-    Bank bank=new Bank("HDFC",65);
+ /*   Bank bank=new Bank("HDFC",65);
     try {
         bank.bankTransaction.withdraw(2000);
         bank.showAccountBalance();
@@ -507,7 +507,12 @@ max=6;
     catch(InsufficientBalanceException ex)
     {
         ex.printStackTrace();
-    }
+    }*/
+
+    PurchaseProductDetails p1=new PurchaseProductDetails();
+    p1.setProductDetails("P001","TV",24000,"entertainment","Shubham");
+    p1.setProductDetails("P002","Mobile",14000,"entertainment","Sangeetha");
+        p1.setProductDetails("P003","Fastrack",4000,"watch","Fastrack");
 
 
 

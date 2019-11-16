@@ -921,6 +921,16 @@ catch(InvalidUserNameException | InvalidPasswordException ex)
 }
 
 
+// Assignment
+
+Assume a scenario in eCommerce where the below operations are supported
+a. Product creation with Supplier details
+b. Product Grouping under category name
+c. User registration
+d. Product purchase
+e. Product discounts - Promotional offer based on the DiscountCode
+
+
 
 
 
