@@ -930,6 +930,14 @@ c. User registration
 d. Product purchase
 e. Product discounts - Promotional offer based on the DiscountCode
 
+// Packages
+folder name should be same as packagename
+
+each class file name should have 1st statement as package
+
+package <packagename>;
+
+in case of subfolders, folder name w.r.t packages are represented using "." separator
 
 
 
