@@ -5,10 +5,10 @@ public class Patient
     private int id;
     private String name;
     private String bloodgroup;
-    private String ailment;
+    private Ailments ailment;
 
 
-    public Patient(int id,String name, String bloodgroup, String ailment)
+    public Patient(int id,String name, String bloodgroup, Ailments ailment)
     {
         this.id=id;
         this.name=name;
@@ -21,7 +21,7 @@ public class Patient
         return "PID:"+this.id+" | PName:"+this.name+" | BG:"+this.bloodgroup+" | AILMENT:"+this.ailment;
     }
 
-    public String getAilment()
+    public Ailments getAilment()
     {
         return ailment;
     }

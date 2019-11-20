@@ -939,7 +939,40 @@ package <packagename>;
 
 in case of subfolders, folder name w.r.t packages are represented using "." separator
 
+// enum - enumeration - Constant definition
 
+class Constant
+{
+public static final String NAME="VISH";
+}
+
+Constant.NAME
+
+OR
+
+enum Constant
+{
+<Constant Identifier1>; = 0
+<Constant Identifier2>; = 1
+......
+}
+
+Constant.<Constant Identifier1>
+
+how to create instance of enum
+
+<enum name> <enum variable>;
+
+Utility classes
+---------------
+1. ArrayList - Collection of values (value can be of anytype)
+
+1. Array List as generic for anything
+2. Typed Array List
+
+ArrayList<Data Type> <Object name>=new ArrayList();
+
+<Array List Object Name>. => Access parameters and methods available
 
 
 
