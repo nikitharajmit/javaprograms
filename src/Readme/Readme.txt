@@ -974,6 +974,21 @@ ArrayList<Data Type> <Object name>=new ArrayList();
 
 <Array List Object Name>. => Access parameters and methods available
 
+Assignment
+Assume a scenario in a hospital where patient registration/admission process to be automated
+1. Patient registration
+2. Doctor allocation for Patient
+3. Admission details
+4. Case sheet view with Patient history details
+5. List of patients for the given doctor
+
+- Observation
+1 Admission= 1 Patient - Done
+1 Patient = Multiple Doctors - Done
+1 Patient = Multiple ailments - Done
+1 Ailment = Multiple medications - Done
+1 Doctor = Multiple specialization - Done
+
 
 
 

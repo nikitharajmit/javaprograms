@@ -2,6 +2,7 @@ package v2l.mainfunction;
 
 import v2l.hospital.Admission;
 import v2l.hospital.Ailments;
+import v2l.hospital.Doctor;
 import v2l.hospital.Patient;
 
 import java.util.ArrayList;
@@ -21,7 +22,68 @@ public class Main
 {
     public static void main(String args[])
     {
-      System.out.println("New Package: V2L.eCOMMERCE");
+
+        // DOCTOR MASTERS
+        ArrayList<Doctor> doctors=new ArrayList<Doctor>();
+
+        // DOCTOR 1
+        doctors.add(new Doctor());
+        ArrayList<String> d1specializations=new ArrayList<String>();
+        d1specializations.add("CARDIO");
+        d1specializations.add("KINDNEY");
+        d1specializations.add("ENT");
+        doctors.get(doctors.size()-1).createDoctor(1,"Prashanth",d1specializations);
+
+        // DOCTOR 2
+        doctors.add(new Doctor());
+        ArrayList<String> d2specializations=new ArrayList<String>();
+        d2specializations.add("SKIN");
+        d2specializations.add("KINDNEY");
+        d2specializations.add("FEVER");
+        doctors.get(doctors.size()-1).createDoctor(2,"Ramesh",d2specializations);
+
+        // SHOW ALL DOCTOR DETAILS
+        for(int i=0;i<doctors.size();i++)
+            System.out.println(doctors.get(i).getDoctorDetails()+" | "+doctors.get(i).getDoctorSpecialization());
+
+        // DOCTORS by SPECCIALIZATIONS
+        System.out.println("SEARCH DOCTOR BY SPECIALIZATION");
+        String searchSpec="cardio";
+        for(int i=0;i<doctors.size();i++)
+            if(doctors.get(i).isSpeciclized(searchSpec))
+                System.out.println(doctors.get(i).getDoctorDetails()+" | "+doctors.get(i).getDoctorSpecialization());
+
+            /*       Patient patient1=new Patient();
+        ArrayList<Ailments> p1ailments=new ArrayList<Ailments>();
+        p1ailments.add(Ailments.FEVER);
+        p1ailments.add(Ailments.WHEEZING);
+        patient1.createPatient(111,"Kiran","O+",p1ailments);
+        System.out.println(patient1.getPatientDetails()+" | "+patient1.getAilments());
+
+        ArrayList<Doctor> p1doctors =new ArrayList<Doctor>();
+        p1doctors.add(doctor1);
+        p1doctors.add(doctor2);
+        patient1.allocateDoctors(p1doctors);
+
+        System.out.println(patient1.getDoctorsDetails());
+
+
+        Patient patient2=new Patient();
+        ArrayList<Ailments> p2ailments=new ArrayList<Ailments>();
+        p2ailments.add(Ailments.KIDNEY_STONE);
+        p2ailments.add(Ailments.CARDIO);
+        patient2.createPatient(141,"Pramod","A+",p2ailments);
+        System.out.println(patient2.getPatientDetails()+" | "+patient2.getAilments());
+
+        ArrayList<Doctor> p2doctors =new ArrayList<Doctor>();
+        p2doctors.add(doctor2);
+        patient2.allocateDoctors(p2doctors);
+
+        System.out.println(patient2.getDoctorsDetails());
+*/
+
+
+     /* System.out.println("New Package: V2L.eCOMMERCE");
 
         Admission admission=new Admission(1011,"November",3056,"Kiran","O+",Ailments.FEVER);
         System.out.println(admission.caseSheet());
@@ -34,7 +96,7 @@ public class Main
 
         System.out.println(admissionList.size());
         admissionList.remove(1);
-        System.out.println(admissionList.size());
+        System.out.println(admissionList.size());*/
 
        /* double loanamount,years,totalinterest;
         Loan loanType;

@@ -3,5 +3,10 @@ package v2l.hospital;
 public enum Ailments
 {
       WHEEZING,
-      FEVER
+      FEVER,
+      SNEEZING,
+      COUGH,
+      KIDNEY_STONE,
+      CARDIO,
+      ENT
 }

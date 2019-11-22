@@ -1,8 +1,9 @@
 package v2l.hospital;
 
 import javax.print.Doc;
+import java.util.ArrayList;
 
-public class Admission extends Patient implements Medications
+public class Admission extends Patient implements ActionsToBeTaken
 {
     private int admissionid;
     private String admissionMonth;
@@ -10,7 +11,7 @@ public class Admission extends Patient implements Medications
 
     public Admission(int admissionid,String admissionMonth,int pid, String patientName, String bloogGroup, Ailments ailments)
     {
-        super(pid, patientName, bloogGroup, ailments);
+        //super(pid, patientName, bloogGroup, new ArrayList<Ailments>());
         this.admissionid=admissionid;
         this.admissionMonth=admissionMonth;
         allocateDoctor("Prashanth");
@@ -18,7 +19,7 @@ public class Admission extends Patient implements Medications
 
     private void allocateDoctor(String docname)
     {
-        doctor=new Doctor(101,docname,"GENERAL PHYSICIAN");
+        doctor=new Doctor();
     }
 
     public String diaognize()
@@ -32,7 +33,7 @@ public class Admission extends Patient implements Medications
            return "Wheezing and please be advised to take nebulization";
         }*/
 
-        switch (getAilment())
+        switch (getAilmentList().get(0))
         {
             case FEVER:
                 return "Viral fever and please be advised to take paracetamol";

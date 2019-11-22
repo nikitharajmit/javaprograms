@@ -1,13 +1,20 @@
 package v2l.hospital;
 
+import java.util.ArrayList;
+
 public class Doctor
 {
     private int id;
     private String name;
-    private String specialization;
+    private ArrayList<String> specialization;
+
+    public Doctor()
+    {
+        specialization=new ArrayList<String>();
+    }
 
 
-    public Doctor(int id,String name, String specialization)
+    public void createDoctor(int id,String name, ArrayList<String> specialization)
     {
         this.id=id;
         this.name=name;
@@ -16,6 +23,24 @@ public class Doctor
 
     public String getDoctorDetails()
     {
-        return " DID"+this.id+" | Doctor Name:"+this.name+" | SPECIALIZATION:"+this.specialization;
+        return " DID:"+this.id+" | Doctor Name:"+this.name;
+    }
+
+    public String getDoctorSpecialization()
+    {
+        String spec="SPEC:";
+
+        for(int i=0;i<specialization.size();i++)
+            spec=spec+"-"+specialization.get(i);
+
+        return spec;
+    }
+
+    public boolean isSpeciclized(String spec)
+    {
+        for(int i=0;i<specialization.size();i++)
+            if(specialization.get(i).toUpperCase().equals(spec.toUpperCase()))
+                return true;
+        return false;
     }
 }
