@@ -6,15 +6,15 @@ public class Doctor
 {
     private int id;
     private String name;
-    private ArrayList<String> specialization;
+    private ArrayList<Ailments> specialization;
 
     public Doctor()
     {
-        specialization=new ArrayList<String>();
+        specialization=new ArrayList<Ailments>();
     }
 
 
-    public void createDoctor(int id,String name, ArrayList<String> specialization)
+    public void createDoctor(int id,String name, ArrayList<Ailments> specialization)
     {
         this.id=id;
         this.name=name;
@@ -36,10 +36,10 @@ public class Doctor
         return spec;
     }
 
-    public boolean isSpeciclized(String spec)
+    public boolean isSpeciclized(Ailments spec)
     {
         for(int i=0;i<specialization.size();i++)
-            if(specialization.get(i).toUpperCase().equals(spec.toUpperCase()))
+            if(specialization.get(i)==spec)
                 return true;
         return false;
     }

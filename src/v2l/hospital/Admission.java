@@ -6,49 +6,90 @@ import java.util.ArrayList;
 public class Admission extends Patient implements ActionsToBeTaken
 {
     private int admissionid;
-    private String admissionMonth;
-    private Doctor doctor;
+    private Month admissionMonth;
+    private ArrayList<Ailments> ailments;
+    private ArrayList<Doctor> availableDoctors;
+    private ArrayList<Ailments> medications;
 
-    public Admission(int admissionid,String admissionMonth,int pid, String patientName, String bloogGroup, Ailments ailments)
+    public Admission()
     {
-        //super(pid, patientName, bloogGroup, new ArrayList<Ailments>());
+        this.availableDoctors=new ArrayList<Doctor>();
+        this.medications=new ArrayList<Ailments>();
+    }
+
+    public void setAvailableDoctorsList(ArrayList<Doctor> doctorsList)
+    {
+        this.availableDoctors=doctorsList;
+    }
+
+    public void createAdmission(int admissionid,Month admissionMonth,int pid, String patientName, String bloogGroup, ArrayList<Ailments> ailments)
+    {
+
         this.admissionid=admissionid;
         this.admissionMonth=admissionMonth;
-        allocateDoctor("Prashanth");
+        this.ailments=ailments;
+        super.createPatient(pid, patientName, bloogGroup, ailments);
+        super.allocateDoctors(allocateDoctor());
     }
 
-    private void allocateDoctor(String docname)
+    private ArrayList<Doctor> allocateDoctor()
     {
-        doctor=new Doctor();
+        ArrayList<Doctor> doctorsForPatient=new ArrayList<Doctor>();
+
+        for(int i=0;i<availableDoctors.size();i++)
+        {
+            for(int j=0;j<ailments.size();j++)
+            {
+                if (availableDoctors.get(i).isSpeciclized(ailments.get(j)))
+                {
+                    doctorsForPatient.add(availableDoctors.get(i));
+                }
+            }
+        }
+        return doctorsForPatient;
     }
 
-    public String diaognize()
+
+    public String showAdmissinDetails()
     {
-        /*if(getAilment()==Ailments.FEVER)
+        return "AdmissionID:"+admissionid+" | AdmissionMonth:"+admissionMonth+"\n"+getPatientDetails()+"\n"+getAilments()+"\n"+getDoctorsDetails();
+    }
+
+    public String diaognize(){
+      /* if(getAilments().equals(Ailments.FEVER))
         {
             return "Viral fever and please be advised to take paracetamol";
         }
-        else
+        else if(getAilments().equals(Ailments.WHEEZING))
         {
            return "Wheezing and please be advised to take nebulization";
-        }*/
-
-        switch (getAilmentList().get(0))
-        {
-            case FEVER:
-                return "Viral fever and please be advised to take paracetamol";
-            case WHEEZING:
-                return "Wheezing and please be advised to take nebulization";
         }
-        return "";
+       else if(getAilments().equals(Ailments.COUGH))
+       {
+           return "Cough and please be advised to take Flonase";
+       }  else if(getAilments().equals(Ailments.CARDIO))
+       {
+           return "Cardio and please be advised to take Rivaroxaban";
+       }
+       return "";*/
+
+        for(int i=0;i<=getAilmentList().size();i++) {
+            switch (getAilmentList().get(i)) {
+
+                case FEVER:
+                    return "Viral fever and please be advised to take paracetamol";
+
+                case WHEEZING:
+                    return "Wheezing and please be advised to take nebulization";
+
+                case COUGH:
+                    return "Cough and please be advised to take Flonase";
+
+            }
+        }
+            return "";
+
     }
-    public String caseSheet()
-    {
-        return "AdmissionID:"+admissionid+" | AdmissionMonth:"+admissionMonth+" | "+getPatientDetails()+" |"+doctor.getDoctorDetails();
-    }
-    public void dischargeSheet()
-    {
-        System.out.println("Discharge sheet");
-    }
+
 
 }

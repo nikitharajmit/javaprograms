@@ -5,11 +5,16 @@ import java.util.ArrayList;
 public class Medication
 {
     private Ailments ailment;
-    private ArrayList<String> medications;
+    private ArrayList<String> prescriptions;
 
     public Medication()
     {
-        medications=new ArrayList<String>();
+        prescriptions=new ArrayList<String>();
+    }
+    public void setMedication(Ailments ailment,ArrayList<String> medications)
+    {
+        this.ailment=ailment;
+        this.prescriptions=medications;
     }
 
 }

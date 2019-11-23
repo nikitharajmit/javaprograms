@@ -1,9 +1,6 @@
 package v2l.mainfunction;
 
-import v2l.hospital.Admission;
-import v2l.hospital.Ailments;
-import v2l.hospital.Doctor;
-import v2l.hospital.Patient;
+import v2l.hospital.*;
 
 import java.util.ArrayList;
 
@@ -28,30 +25,52 @@ public class Main
 
         // DOCTOR 1
         doctors.add(new Doctor());
-        ArrayList<String> d1specializations=new ArrayList<String>();
-        d1specializations.add("CARDIO");
-        d1specializations.add("KINDNEY");
-        d1specializations.add("ENT");
+        ArrayList<Ailments> d1specializations=new ArrayList<Ailments>();
+        d1specializations.add(Ailments.KIDNEY_STONE);
+        d1specializations.add(Ailments.CARDIO);
+        d1specializations.add(Ailments.WHEEZING);
         doctors.get(doctors.size()-1).createDoctor(1,"Prashanth",d1specializations);
 
         // DOCTOR 2
         doctors.add(new Doctor());
-        ArrayList<String> d2specializations=new ArrayList<String>();
-        d2specializations.add("SKIN");
-        d2specializations.add("KINDNEY");
-        d2specializations.add("FEVER");
+        ArrayList<Ailments> d2specializations=new ArrayList<Ailments>();
+        d2specializations.add(Ailments.FEVER);
+        d2specializations.add(Ailments.COUGH);
+        d2specializations.add(Ailments.CARDIO);
         doctors.get(doctors.size()-1).createDoctor(2,"Ramesh",d2specializations);
 
+        ArrayList<Medication> medicationlist=new ArrayList<Medication>();
+        medicationlist.add(new Medication());
+
+        ArrayList<String> feverprescriptions=new ArrayList<String>();
+        feverprescriptions.add("Please be advised to take paracetamol daily twice");
+        feverprescriptions.add("Please be advised to take rest for 2 days");
+        feverprescriptions.add("Please be advised to not use oil foods for 10 days");
+
+        medicationlist.get(medicationlist.size()-1).setMedication(Ailments.FEVER,feverprescriptions);
+
+        ArrayList<Ailments> p1ailments=new ArrayList<Ailments>();
+        p1ailments.add(Ailments.FEVER);
+        p1ailments.add(Ailments.WHEEZING);
+
+        Admission admission1=new Admission();
+        admission1.setAvailableDoctorsList(doctors);
+        admission1.createAdmission(1, Month.JAN,1101,"Vish","O+",p1ailments);
+        System.out.println(admission1.showAdmissinDetails());
+        System.out.println(admission1.diaognize());
+        /*
         // SHOW ALL DOCTOR DETAILS
         for(int i=0;i<doctors.size();i++)
             System.out.println(doctors.get(i).getDoctorDetails()+" | "+doctors.get(i).getDoctorSpecialization());
 
         // DOCTORS by SPECCIALIZATIONS
         System.out.println("SEARCH DOCTOR BY SPECIALIZATION");
-        String searchSpec="cardio";
+        Ailments searchSpec=Ailments.WHEEZING;
         for(int i=0;i<doctors.size();i++)
             if(doctors.get(i).isSpeciclized(searchSpec))
                 System.out.println(doctors.get(i).getDoctorDetails()+" | "+doctors.get(i).getDoctorSpecialization());
+        */
+
 
             /*       Patient patient1=new Patient();
         ArrayList<Ailments> p1ailments=new ArrayList<Ailments>();
