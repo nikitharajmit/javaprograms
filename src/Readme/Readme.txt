@@ -990,6 +990,12 @@ Assume a scenario in a hospital where patient registration/admission process to 
 1 Doctor = Multiple specialization - Done
 
 
+- Annotations
+- Event programing (without GUI)
+- Database Connectivity
+- Utility classes
+- Multi Threading
+
 
 
 
