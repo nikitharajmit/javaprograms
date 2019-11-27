@@ -50,3 +50,57 @@ DBMS - Database Management System
 .
 .
 .
+
+
+
+DDL
+---
+
+create database <database name>
+
+drop database <database name>
+
+getting into the scope of database for executing SQL queries in Mysql
+    use database <database name>
+
+1. Create
+
+create table <table name>
+(
+<field name1> <data type> [<constraint(s)>],
+<field name2> <data type> [<constraint(s)>],
+<field name3> <data type> [<constraint(s)>],
+.
+.
+.
+
+<field name n> <data type> [<constraint(s)>]
+);
+
+
+2. Alter
+
+alter table <table name> ADD/MODIFY/DROP COLUMN <Column name> <data type> <constraint>;
+
+3. Drop
+
+drop table <table name>
+
+DML
+---
+
+1. Insert
+
+insert into <table name>[(<column1 name>,<column2 name>......)] values (<value for column1>,<value for column2>.......)
+
+2. Select
+
+select */[(<column1 name>,<column2 name>......)] from <table name> where [Condition(s)]
+
+condition
+<column name> <rel operator> <value>/<column name>
+rel operators: ==/!=/>/>=/</<=
+logical operators: and/or/not
+
+
+
