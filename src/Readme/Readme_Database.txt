@@ -203,6 +203,64 @@ LEFT OUTER JOIN (Left join)
 RIGHT OUTER JOIN (Right join)
 CROSS JOIN (Cross)
 
+Group By + Aggregation Functions and Order By clause
+----------------------------------------------------
+1. Select no. of employees who work for the organization - Count
+select count(id) from employee
+
+2. Select total salary payout in the organization - Sum
+
+
+3. Select average salary payout in the organization - Average
+select avg(esalary) from employee
+
+Count(*/<Column names>)
+- count the number of records excluding NULL values
+
+Sum
+- Always applied for number fields
+
+Average
+- Always applied for number fields | Exclude NULL values
+
+Select <Agg Functions>(*/<Column name>) from <table name> (List of values)
+
+Min
+- Always applied for number fields
+
+Max
+- Always applied for number fields
+
+Alias names for Column and Tables
+---------------------------------
+<column name> as <alias column name>
+<table name> as <alias table name>
+
+select id as Employee_id, ename as Employe_name from employee
+
+select id as Employee_id, ename as Employe_name, dname as Dept_name from employee as E inner join department as D on E.did=D.did
+
+1. Count no. of employees in each department
+
+GROUP BY CLAUSE
+---------------
+- Group records based on the column name(s) and aggregation functions are applied
+
+select <aggregation function>, <colum names used in group by clause> from <table name> group by <colum names>
+
+select count(id) as No_of_Employees, dname as Department_Name from employee as E inner join department as D on E.did=D.did group by Department_name
+
+ORDER BY CLAUSE
+----------------
+- Order by clause is used to show the data in sorted order
+
+select <colum names> from <table name> order by <colum name> [DESC]
+
+show employee details order by their salary data
+
+select * from employee order by salary
+
+
 
 
 
