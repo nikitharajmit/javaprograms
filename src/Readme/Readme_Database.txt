@@ -261,6 +261,35 @@ show employee details order by their salary data
 select * from employee order by salary
 
 
+JAVA DATABASE CONNECTIVITY
+--------------------------
+
+Package: java.sql
+
+Key Classes used
+----------------
+1. DriverManager (This class is used to build connection and get connection object)
+    - Static function used: getConnection()
+    - Connection String
+        jdbc:mysql://<localhost>/<IP>/<Server Name>:3306/<database name>, <Uname>, <Password>
+
+2. Connection (This class is used to create statement object and perform connection based function
+    - Function used: createStatement(), Close(), Open()...
+3. Statement ( This class is used to execute DML queries
+    - Function used
+        - executeUpdate -> for Insert, Update, Delete queries | Returns Int (rows affected)
+        - executeQuery -> for Select query | Returns ResultSet Object
+4. ResultSet (This class is used to operate on the records received as part of Select query results)
+    - Functions used
+        - next() -> This will move the pointer to the next record and returns True if record exists and False for no Records
+        - getInt("<Column name>/<Column No.)"), getString("<Column name>/<Column No.)").......
+
+
+
+
+
+
+
 
 
 
