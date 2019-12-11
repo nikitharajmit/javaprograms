@@ -285,7 +285,14 @@ Key Classes used
         - getInt("<Column name>/<Column No.)"), getString("<Column name>/<Column No.)").......
 
 
-
+Assignment
+----------
+1. Perform the CRUD operation on the given employee table
+    a. Insert
+    b. Update
+    c. Delete
+    d. Select/Display
+    e. Search by department name
 
 
 
