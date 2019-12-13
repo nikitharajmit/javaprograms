@@ -17,7 +17,7 @@ public class DBMain {
             int choice;
 
             do {
-
+                ResultSet resultSet;
                 System.out.println("1. Insert");
                 System.out.println("2. Update");
                 System.out.println("3. Delete");
@@ -53,14 +53,54 @@ public class DBMain {
 
                         break;
                     case 2:
-                        System.out.println("This operation is not available yet.. coming soon....");
+                        System.out.print("Please enter the employee id to update:");
+                        eid=scanner.nextInt();
+
+                        resultSet=statement.executeQuery("select salary as esalary,age as eage from employee where id="+eid);
+                        if(resultSet.next())
+                        {
+                            System.out.println("OLD SALARY:"+resultSet.getInt("esalary")+" Please enter the new salary:");
+                            esalary=scanner.nextInt();
+
+                            System.out.println("OLD AGE:"+resultSet.getInt("eage")+" Please enter the new age (18-50):");
+                            eage=scanner.nextInt();
+
+                            String sqlQuery="update employee set salary="+esalary+",age="+eage+" where id="+eid;
+                            int rowsaffected=statement.executeUpdate(sqlQuery);
+                            System.out.println(rowsaffected+" row(s) updated successfully | "+sqlQuery);
+
+                        }
+                        else
+                        {
+                            System.out.println("Invalid employee id! Please try again...");
+                        }
                         break;
                     case 3:
-                        System.out.println("This operation is not available yet.. coming soon....");
+                        System.out.print("Please enter the employee id to delete:");
+                        eid=scanner.nextInt();
+
+                        resultSet=statement.executeQuery("select * from employee where id="+eid);
+                        if(resultSet.next())
+                        {
+                            System.out.print("You are about to delete employee with Id:"+resultSet.getInt("id")+" Name:"+resultSet.getString("ename")+"(Y/N):");
+                            String confirmationToDelete;
+                            confirmationToDelete=scanner.next();
+
+                            if(confirmationToDelete.equals("Y"))
+                            {
+                                String sqlQuery = "delete from employee where id=" + eid;
+                                int rowsaffected = statement.executeUpdate(sqlQuery);
+                                System.out.println(rowsaffected + " row(s) deleted successfully | " + sqlQuery);
+                            }
+                        }
+                        else
+                        {
+                            System.out.println("Invalid employee id! Please try again...");
+                        }
                         break;
                     case 4:
                         System.out.println("List of Employees available in database");
-                        ResultSet resultSet=statement.executeQuery("select id as eid, ename, salary as esalary, age as eage, dname, designationname from employee inner join department inner join designation on employee.did=department.did and employee.desid=designation.desid order by eid");
+                        resultSet=statement.executeQuery("select id as eid, ename, salary as esalary, age as eage, dname, designationname from employee inner join department inner join designation on employee.did=department.did and employee.desid=designation.desid order by eid");
                         System.out.println("EID\tENAME\t\tESALARY\tEAGE\tDEPTNAME\tDESIGNAME");
                         System.out.println("---\t-----\t\t-------\t----\t------\t--------");
                         while(resultSet.next())
@@ -69,7 +109,26 @@ public class DBMain {
                         }
                         break;
                     case 5:
-                        System.out.println("This operation is not available yet.. coming soon....");
+                        System.out.print("Please enter the department name to search:");
+                        String dname;
+                        dname=scanner.next();
+                        //resultSet=statement.executeQuery("select * from department where dname='"+dname.toUpperCase()+"'");
+                        resultSet=statement.executeQuery("select * from department where did="+getDeptId(dname));
+                        if(resultSet.next())
+                        {
+                            System.out.println("List of Employees for Dname:"+dname.toUpperCase());
+                            resultSet=statement.executeQuery("select id as eid, ename, salary as esalary, age as eage, dname, designationname from employee inner join department inner join designation on employee.did=department.did and employee.desid=designation.desid and department.did="+getDeptId(dname)+" order by eid");
+                            System.out.println("EID\tENAME\t\tESALARY\tEAGE\tDEPTNAME\tDESIGNAME");
+                            System.out.println("---\t-----\t\t-------\t----\t------\t--------");
+                            while(resultSet.next())
+                            {
+                                System.out.println(resultSet.getInt("eid")+"\t"+resultSet.getString("ename")+"\t"+resultSet.getInt("esalary")+"\t"+resultSet.getInt("eage")+"\t"+resultSet.getString("dname")+"\t"+resultSet.getString("designationname"));
+                            }
+                        }
+                        else
+                        {
+                            System.out.println("Invalid Department name! please try again...");
+                        }
                         break;
                     default:
                         System.out.println("Please select the right operation to be performed on Employee table");
@@ -102,6 +161,7 @@ public class DBMain {
 
         if (dname.toUpperCase().equals("SALES"))
         {
+
             return 1;
         }
         else if (dname.toUpperCase().equals("PRODUCTION"))
