@@ -294,6 +294,43 @@ Assignment
     d. Select/Display
     e. Search by department name
 
+// Application architecture
+    User -> Front End - Manifestation -> Business Logic -> Database Operations - > DBMS
+
+    User -> Console -> Class for Employee -> Class for Employee DB -> DBMS
+
+DBO - Database Object
+
+main() -> Console
+
+class Employee
+{
+int id;
+String name;
+int salary;
+int age;
+int deptid;
+int desigid;
+String deptname;
+String designame;
+}
+
+class EmployeeDbo
+{
+Employee e;
+}
+
+class DepartmentDbo
+{
+}
+
+class DesignationDbo
+{
+}
+
+
+
+
 
 
 
