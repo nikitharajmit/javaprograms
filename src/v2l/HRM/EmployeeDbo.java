@@ -2,6 +2,7 @@ package v2l.HRM;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class EmployeeDbo
@@ -36,8 +37,67 @@ public class EmployeeDbo
     }
 
 
+    public boolean updateEmployeeSalary(Employee employee, int newSalary)
+    {
+        boolean updateStatus=false;
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "update employee set salary="+newSalary+" where id="+employee.getId();
+            System.out.println(sqlQuery);
+            int updateRowCount=statement.executeUpdate(sqlQuery);
+            if(updateRowCount>0)
+                updateStatus=true;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+        return updateStatus;
+    }
 
+    public boolean updateEmployeeAge(Employee employee,int newAge)
+    {
+        boolean updateStatus=false;
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "update employee set age="+newAge+" where id="+employee.getId();
+            System.out.println(sqlQuery);
+            int updateRowCount=statement.executeUpdate(sqlQuery);
+            if(updateRowCount>0)
+                updateStatus=true;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+        return updateStatus;
+    }
 
+    public Employee getEmployeeById(int eid)
+    {
+        Employee employee=null;
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "select * from employee where id="+eid;
+            System.out.println(sqlQuery);
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            if(resultSet.next()) {
+                employee=new Employee();
+                employee.setId(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("ename"));
+                employee.setSalary(resultSet.getInt("salary"));
+                employee.setAge(resultSet.getInt("age"));
+                employee.setDeptId(resultSet.getInt("did"));
+                employee.setDesigId(resultSet.getInt("desid"));
+            }
 
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+
+        return employee;
+    }
 
 }

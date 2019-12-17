@@ -45,6 +45,38 @@ public class Employee
         return designationDbo.getIdbyDesignationName(this.designame);
     }
 
+    public void setId(int eid)
+    {
+        this.id=eid;
+    }
+
+    public void setName(String ename)
+    {
+        this.name=ename;
+    }
+
+    public void setSalary(int esalary)
+    {
+        this.salary=esalary;
+    }
+
+    public void setAge(int eage)
+    {
+        this.age=eage;
+    }
+
+    public void setDeptId(int deptId)
+    {
+        DepartmentDbo deptdbo=new DepartmentDbo();
+        dname= deptdbo.getNamebyDepartmentId(deptId);
+    }
+
+    public void setDesigId(int desigId)
+    {
+        DesignationDbo designationDbo=new DesignationDbo();
+        designame= designationDbo.getNamebyDesignationId(desigId);
+    }
+
     public boolean createEmployee(int id, String name, int salary, int age, String dname, String designame)
     {
         boolean validData=true;
@@ -75,6 +107,18 @@ public class Employee
     }
 
 
+    public boolean updateSalary(int newSalary)
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        return employeeDbo.updateEmployeeSalary(this,newSalary);
+    }
+
+    public boolean updateAge(int newAge)
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        return employeeDbo.updateEmployeeAge(this,newAge);
+    }
+
     public ArrayList<String> getDepartmentNamesToChoose()
     {
         DepartmentDbo departmentDbo=new DepartmentDbo();
@@ -87,5 +131,10 @@ public class Employee
         return designationDbo.getDesignationNames();
     }
 
+    public static Employee getEmployeeObjectById(int eid)
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        return employeeDbo.getEmployeeById(eid);
+    }
 
 }
