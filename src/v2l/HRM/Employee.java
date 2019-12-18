@@ -33,6 +33,11 @@ public class Employee
         return this.age;
     }
 
+    public String getDname(){return dname;}
+
+    public String getDesigname(){return designame;}
+
+
     public int getDeptId()
     {
         DepartmentDbo deptdbo=new DepartmentDbo();
@@ -119,13 +124,18 @@ public class Employee
         return employeeDbo.updateEmployeeAge(this,newAge);
     }
 
-    public ArrayList<String> getDepartmentNamesToChoose()
+    public boolean deleteRecord()
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        return employeeDbo.deleteEmployee(this);
+    }
+    public static ArrayList<String> getDepartmentNamesToChoose()
     {
         DepartmentDbo departmentDbo=new DepartmentDbo();
         return departmentDbo.getDepartmentNames();
     }
 
-    public ArrayList<String> getDesignationNamesToChoose()
+    public static  ArrayList<String> getDesignationNamesToChoose()
     {
         DesignationDbo designationDbo=new DesignationDbo();
         return designationDbo.getDesignationNames();
@@ -136,5 +146,19 @@ public class Employee
         EmployeeDbo employeeDbo=new EmployeeDbo();
         return employeeDbo.getEmployeeById(eid);
     }
+
+    public static ArrayList<Employee> getAllEmployees()
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        return employeeDbo.getAllEmployees();
+    }
+
+    public static ArrayList<Employee> getAllEmployees(String dname)
+    {
+        EmployeeDbo employeeDbo=new EmployeeDbo();
+        DepartmentDbo departmentDbo=new DepartmentDbo();
+        return employeeDbo.getAllEmployees(departmentDbo.getIdbyDepartmentName(dname));
+    }
+
 
 }

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class EmployeeDbo
 {
@@ -73,6 +74,24 @@ public class EmployeeDbo
         return updateStatus;
     }
 
+    public boolean deleteEmployee(Employee employee)
+    {
+        boolean deleteStatus=false;
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "delete from employee where id="+employee.getId();
+            System.out.println(sqlQuery);
+            int deleteRowCount=statement.executeUpdate(sqlQuery);
+            if(deleteRowCount>0)
+                deleteStatus=true;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+        return deleteStatus;
+    }
+
     public Employee getEmployeeById(int eid)
     {
         Employee employee=null;
@@ -98,6 +117,64 @@ public class EmployeeDbo
         }
 
         return employee;
+    }
+
+    public ArrayList<Employee> getAllEmployees()
+    {
+        ArrayList<Employee> employeeArrayList=new ArrayList<Employee>();
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "select * from employee order by id";
+            System.out.println(sqlQuery);
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            while(resultSet.next())
+            {
+                Employee employee=new Employee();
+                employee.setId(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("ename"));
+                employee.setSalary(resultSet.getInt("salary"));
+                employee.setAge(resultSet.getInt("age"));
+                employee.setDeptId(resultSet.getInt("did"));
+                employee.setDesigId(resultSet.getInt("desid"));
+                employeeArrayList.add(employee);
+            }
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+
+        return employeeArrayList;
+    }
+
+    public ArrayList<Employee> getAllEmployees(int did)
+    {
+        ArrayList<Employee> employeeArrayList=new ArrayList<Employee>();
+        try {
+            statement = connection.createStatement();
+            String sqlQuery = "select * from employee where did="+did+" order by id";
+            System.out.println(sqlQuery);
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            while(resultSet.next())
+            {
+                Employee employee=new Employee();
+                employee.setId(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("ename"));
+                employee.setSalary(resultSet.getInt("salary"));
+                employee.setAge(resultSet.getInt("age"));
+                employee.setDeptId(resultSet.getInt("did"));
+                employee.setDesigId(resultSet.getInt("desid"));
+                employeeArrayList.add(employee);
+            }
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("Statement creation failed...");
+        }
+
+        return employeeArrayList;
     }
 
 }
