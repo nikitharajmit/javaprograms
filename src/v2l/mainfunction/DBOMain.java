@@ -1,5 +1,6 @@
 package v2l.mainfunction;
 
+import v2l.Ecommerce.PurchaseProduct;
 import v2l.HRM.Employee;
 
 import java.util.ArrayList;
@@ -9,7 +10,28 @@ public class DBOMain
 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        int id, salary, age;
+
+        int purid;
+        String pname,sname,username;
+
+        PurchaseProduct purchaseProduct=new PurchaseProduct();
+        System.out.println("Please provide details product details");
+        System.out.println("Please give purchase id");
+        purid = scanner.nextInt();
+        System.out.print("Employee Product Name: ");
+        pname = scanner.next();
+        System.out.print("Employee Suppiler Name: ");
+        sname = scanner.next();
+        System.out.print("Employee User name: ");
+        username= scanner.next();
+
+        if (!purchaseProduct.PurchaseDetails(purid,pname,sname,username)) {
+            System.out.println("Error in data.. please check...");
+        } else {
+            System.out.println("Employee record created successfully...");
+        }
+
+       /* int id, salary, age;
         String name, dname, designame;
 
         Employee employee = null;
@@ -142,6 +164,6 @@ public class DBOMain
                 default:
                     System.out.println("Invalid Choice!....");
             }
-        }while(choiceOfOperation!=6);
+        }while(choiceOfOperation!=6);*/
     }
 }
