@@ -18,54 +18,16 @@ public class ProductDbo {
             System.out.println("DB Connection Failed!...");
         }
     }
-   public int getPriceById(int pid){
+    public void insertProduct(PurchaseProduct purchaseProduct){
         try {
-            statement=connection.createStatement();
-            String sqlQuery="select pprice from department where pid='"+pid+"'";
-            ResultSet resultSet=statement.executeQuery(sqlQuery);
-            if(resultSet.next())
-            {
-                pid=resultSet.getInt("pid");
-            }
+            Statement statement=connection.createStatement();
+            String sqlQuery="Insert into eproduct values("+purchaseProduct.getpId()+",'"+purchaseProduct.getpName()+"',"+purchaseProduct.getPrice()+","+purchaseProduct.getCid()+")";
+            System.out.println(sqlQuery);
+            statement.executeUpdate(sqlQuery);
         }
         catch (Exception e){
             System.out.println("Invalid Statement");
         }
-        return pid;
-   }
-    public int getIdByProductName(String pname){
-
-        int pid=0;
-        try {
-            statement=connection.createStatement();
-            String sqlQuery="select pid from department where pname='"+pname+"'";
-            ResultSet resultSet=statement.executeQuery(sqlQuery);
-            if(resultSet.next())
-            {
-                pid=resultSet.getInt("pid");
-            }
-        }
-        catch (Exception e){
-            System.out.println("Invalid Statement");
-        }
-        return pid;
-    }
-    public String getProductNameById(int pid){
-        String pname="";
-
-        try {
-            statement=connection.createStatement();
-            String sqlQuery="select pname from department where pid="+pid+"";
-            ResultSet resultSet=statement.executeQuery(sqlQuery);
-            if(resultSet.next())
-            {
-                pname=resultSet.getString("pname");
-            }
-        }
-        catch (Exception e){
-            System.out.println("Invalid Statement");
-        }
-        return pname;
     }
 
 }

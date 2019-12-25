@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class PurchaseDbo {
-    private Connection connection;
+  /*  private Connection connection;
     private Statement statement;
 
     public PurchaseDbo()
@@ -32,5 +32,5 @@ public class PurchaseDbo {
             System.out.println("Statement creation failed...");
         }
 
-    }
+    }*/
 }

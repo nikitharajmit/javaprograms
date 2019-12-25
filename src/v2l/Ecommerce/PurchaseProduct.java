@@ -1,81 +1,99 @@
 package v2l.Ecommerce;
 
+import com.company.Cat;
+
 import java.time.temporal.ValueRange;
+import java.util.ArrayList;
 
 public class PurchaseProduct {
-    private int purid;
+    private int pid;
     private String pname;
+    private int pprice;
+    private String cname;
     private String sname;
-    private String username;
-    private int billamont;
-    private int discountAmount;
-    private int quantity;
 
-    public int getPurid(){
-        return this.purid;
+    public int getpId()
+    {
+        return this.pid;
     }
-    public String getpname(){
-       return this.pname;
+
+    public String getpName()
+    {
+        return this.pname;
+    }
+
+    public int getPrice()
+    {
+        return this.pprice;
+    }
+
+    public String getCname(){
+        return this.cname;
     }
     public String getSname(){
         return this.sname;
-
-    }
-    public String getUsername(){
-       return this.username;
     }
 
-  /*  public int getProductId()
-    {
-        ProductDbo productDbo=new ProductDbo();
-        return productDbo.getIdByProductName(this.pname);
+    public int getCid(){
+        Category category=new Category();
+        return category.getIdbyCategoryName(this.cname);
     }
-    public int getSupplierId()
-    {
+    public int getSid(){
         Supplier supplier=new Supplier();
         return supplier.getIdbySupplierName(this.sname);
     }
-    public int getBillamont(){
-        return this.billamont;
+    public void setpId(int pid){
+        this.pid=pid;
     }
-    public int getDiscountAmount(){
-        return this.discountAmount;
+
+    public void setPname(String pname){
+        this.pname=pname;
     }
-    public int getQuantity(){
-        return this.quantity;
-    }*/
-
-    public boolean PurchaseDetails(int purid, String pname, String sname,String username)
-    {
-        boolean validate=true;
-        this.purid=purid;
-
-        ProductDbo productDbo=new ProductDbo();
-        if(productDbo.getIdByProductName(pname)==0)
-            validate=false;
-        else
-            this.pname=pname;
-
+    public void setPprice(int pprice){
+        this.pprice=pprice;
+    }
+    public void setCid(int cid){
+        Category category=new Category();
+        cname=category.getCategoryNamebyId(cid);
+    }
+    public void setSname(int sid){
         Supplier supplier=new Supplier();
-        if(supplier.getIdbySupplierName(sname)==0)
-            validate=false;
-            else
-                this.sname=sname;
+        sname=supplier.getNamebySupplierId(sid);
+    }
+    public boolean createProduct(int pid,String pname,int pprice,String cname,String sname) {
+        boolean validate = true;
+        this.pid = pid;
+        this.pprice = pprice;
+        this.pname = pname;
 
-            User user=new User();
-            if(user.getIdbyUserName(username)==0)
-                validate=false;
-            else
-                this.username=username;
+        Category category = new Category();
+        if (category.getIdbyCategoryName(cname) == 0)
+            validate = false;
+        else
+            this.cname = cname;
 
-        if(validate) {
-            PurchaseDbo purchaseDbo = new PurchaseDbo();
-            purchaseDbo.insertPurchaseDetails(this);
-        }
+        Supplier supplier = new Supplier();
+        if (supplier.getIdbySupplierName(sname) == 0)
+            validate = false;
+        else
+            this.sname = sname;
+        if (validate){
+            ProductDbo productDbo = new ProductDbo();
+        productDbo.insertProduct(this);
+    }
 
         return validate;
-
-
     }
+    public static ArrayList<String> getCategoryNameTochoose(){
+        Category category=new Category();
+        return category.getCategoryNames();
+    }
+    public static ArrayList<String> getSupplierNameTochoose(){
+        Supplier supplier=new Supplier();
+        return supplier.getSupplierNames();
+    }
+
+
+
 
 }

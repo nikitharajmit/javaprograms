@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Supplier {
     private Connection connection;
@@ -17,6 +18,7 @@ public class Supplier {
             System.out.println("DB Connection Failed!...");
         }
     }
+
 
     public int getIdbySupplierName(String sname)
     {
@@ -49,7 +51,7 @@ public class Supplier {
         try
         {
             statement=connection.createStatement();
-            String sqlQuery="select sname from department where sid="+sid+"";
+            String sqlQuery="select sname from suppiler where sid="+sid+"";
             ResultSet resultSet=statement.executeQuery(sqlQuery);
             if(resultSet.next())
             {
@@ -65,5 +67,25 @@ public class Supplier {
             System.out.println(e);
         }
         return sname;
+    }
+    public ArrayList<String> getSupplierNames()
+    {
+        ArrayList<String> suppliername=new ArrayList<String>();
+        try
+        {
+            statement=connection.createStatement();
+            String sqlQuery="select sname from suppiler order by sname";
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            while(resultSet.next())
+            {
+                suppliername.add(resultSet.getString("sname"));
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
+        return suppliername;
     }
 }
