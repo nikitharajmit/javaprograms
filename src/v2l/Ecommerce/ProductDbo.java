@@ -18,16 +18,37 @@ public class ProductDbo {
             System.out.println("DB Connection Failed!...");
         }
     }
-    public void insertProduct(PurchaseProduct purchaseProduct){
+    public void getProductByCategory(String cname){
+        Product product=new Product();
+        Category category=new Category();
+        Supplier supplier=new Supplier();
         try {
             Statement statement=connection.createStatement();
-            String sqlQuery="Insert into eproduct values("+purchaseProduct.getpId()+",'"+purchaseProduct.getpName()+"',"+purchaseProduct.getPrice()+","+purchaseProduct.getCid()+")";
+            String sqlQuery=("select pid,pname,pprice,cname,sname from eproduct INNER JOIN procategory INNER JOIN suppiler ON eproduct.cid=procategory.cid and eproduct.sid=suppiler.sid where cname='"+cname+"'");
             System.out.println(sqlQuery);
-            statement.executeUpdate(sqlQuery);
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            System.out.println("PID\tPNAME\t\tPPRICE\tCNAME\tSNAME");
+            System.out.println("---\t-----\t\t------\t----\t------");
+            if(resultSet.next()) {
+
+            product.setpId(resultSet.getInt("pid"));
+            product.setPname(resultSet.getString("pname"));
+            product.setPprice(resultSet.getInt("pprice"));
+            category.setCname(resultSet.getString("cname"));
+            supplier.setSname(resultSet.getString("sname"));
+
+                System.out.println(resultSet.getInt("pid"));
+                System.out.println(resultSet.getString("pname"));
+                System.out.println(resultSet.getInt("pprice"));
+                System.out.println(resultSet.getString("cname"));
+                System.out.println(resultSet.getString("sname"));
+            }
         }
         catch (Exception e){
             System.out.println("Invalid Statement");
         }
+
     }
+
 
 }
