@@ -1,9 +1,6 @@
 package v2l.mainfunction;
 
-import v2l.Ecommerce.Category;
-import v2l.Ecommerce.Product;
-import v2l.Ecommerce.ProductDbo;
-import v2l.Ecommerce.PurchaseProduct;
+import v2l.Ecommerce.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +9,8 @@ public class EDBMain {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         String cname;
-        int choice;
+        float billamount;
+        int choice,pid,quantity,pprice,month;
         do {
             System.out.println("Please select the list below");
             System.out.println("1.Purchase Product");
@@ -28,8 +26,20 @@ public class EDBMain {
                         System.out.println(categoryName.get(i));
                     cname=scanner.next();
                     System.out.println("Product list under selected category");
-                    ProductDbo productDbo=new ProductDbo();
-                    productDbo.getProductByCategory(cname);
+                    Product product=new Product();
+                    product.getAllproduct(cname);
+                    System.out.println("Enter Product id and Quantity");
+                    pid=scanner.nextInt();
+                    quantity=scanner.nextInt();
+                    pprice=product.getProductPrice(pid,quantity);
+                    System.out.println("Product Price:"+pprice);
+                    ProductDiscount productDiscount=new ProductDiscount();
+                    System.out.println("Enter Purchase Month");
+                    month=scanner.nextInt();
+                    productDiscount.applyDiscount(month);
+                    billamount=productDiscount.displayBillamount();
+
+
 
 
             }

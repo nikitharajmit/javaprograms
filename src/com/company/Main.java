@@ -446,7 +446,7 @@ p2.showProductDetails();
 
 /*float total_marks, obtained_marks,percentage;
 
-total_marks=600;
+total_marks=300;
 obtained_marks=560;
 percentage=0;
 
@@ -509,13 +509,13 @@ max=6;
         ex.printStackTrace();
     }*/
 
-    PurchaseProductDetails p1=new PurchaseProductDetails();
+ /*   PurchaseProductDetails p1=new PurchaseProductDetails();
     p1.setProductDetails("P001","TV",24000,"entertainment","Shubham");
     p1.setProductDetails("P002","Mobile",14000,"entertainment","Sangeetha");
         p1.setProductDetails("P003","Fastrack",4000,"watch","Fastrack");
 
 
-
+*/
 
 
 

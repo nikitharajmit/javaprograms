@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Category {
 
     private int cid;
-    private String cname;
+    public String cname;
 
     public String getCname(){
         return this.cname;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Supplier {
 
 private int sid;
-private String sname;
+public String sname;
 
     public String getSname(){
         return this.sname;

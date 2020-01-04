@@ -27,9 +27,9 @@ public class ProductDbo {
             String sqlQuery=("select pid,pname,pprice,cname,sname from eproduct INNER JOIN procategory INNER JOIN suppiler ON eproduct.cid=procategory.cid and eproduct.sid=suppiler.sid where cname='"+cname+"'");
             System.out.println(sqlQuery);
             ResultSet resultSet=statement.executeQuery(sqlQuery);
-            System.out.println("PID\tPNAME\t\tPPRICE\tCNAME\tSNAME");
-            System.out.println("---\t-----\t\t------\t----\t------");
-            if(resultSet.next()) {
+            System.out.println("PID\tPNAME\tPPRICE\tCNAME\tSNAME");
+            System.out.println("---\t-----\t------\t----\t------");
+            while(resultSet.next()) {
 
             product.setpId(resultSet.getInt("pid"));
             product.setPname(resultSet.getString("pname"));
@@ -37,17 +37,30 @@ public class ProductDbo {
             category.setCname(resultSet.getString("cname"));
             supplier.setSname(resultSet.getString("sname"));
 
-                System.out.println(resultSet.getInt("pid"));
-                System.out.println(resultSet.getString("pname"));
-                System.out.println(resultSet.getInt("pprice"));
-                System.out.println(resultSet.getString("cname"));
-                System.out.println(resultSet.getString("sname"));
+                System.out.println(resultSet.getInt("pid")+"\t"+resultSet.getString("pname")+"\t"+resultSet.getInt("pprice")+"\t"+resultSet.getString("cname")+"\t"+resultSet.getString("sname"));
             }
         }
         catch (Exception e){
             System.out.println("Invalid Statement");
         }
 
+    }
+    public int getProductPriceById(int pid){
+        int pprice=0;
+        try{
+            Statement statement=connection.createStatement();
+            String sqlQuery=("select pprice from eproduct where pid="+pid);
+            System.out.println(sqlQuery);
+            ResultSet resultSet=statement.executeQuery(sqlQuery);
+            if(resultSet.next()){
+               pprice=resultSet.getInt("pprice");
+               return pprice;
+            }
+        }
+        catch (Exception e){
+            System.out.println("Invalid product price");
+        }
+        return pprice;
     }
 
 

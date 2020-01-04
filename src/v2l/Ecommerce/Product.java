@@ -7,6 +7,7 @@ public class Product {
     private int pprice;
 
 
+
     public int getpId()
     {
         return this.pid;
@@ -35,6 +36,31 @@ public class Product {
     }
 
 
+    public String getCname(){
+        Category category=new Category();
+        return category.cname;
+    }
+    public void setCname(String cname){
+        Category category=new Category();
+        category.cname=cname;
+    }
+    public String getSname(){
+        Supplier supplier=new Supplier();
+        return supplier.sname;
+    }
+    public void setSname(String sname){
+        Supplier supplier=new Supplier();
+        supplier.sname=sname;
+    }
+    public void getAllproduct(String cname)
+    {
+        ProductDbo productDbo=new ProductDbo();
+      productDbo.getProductByCategory(cname);
+    }
+    public int getProductPrice(int pid, int quantity){
+        ProductDbo productDbo=new ProductDbo();
+        return productDbo.getProductPriceById(pid)*quantity;
 
+    }
 
 }
